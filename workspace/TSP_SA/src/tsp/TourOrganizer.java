@@ -1,3 +1,8 @@
+/*
+* TourOrganizer.java
+* Organizes a tour
+*/
+
 package tsp;
 
 import java.util.ArrayList;
@@ -21,5 +26,4 @@ public class TourOrganizer {
     public static int numberOfNodes(){
         return destinationNodes.size();
     }
-
 }

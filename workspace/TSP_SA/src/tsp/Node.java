@@ -1,3 +1,8 @@
+/*
+* Node.java
+* Stores a node with ID and position (X and Y)
+*/
+
 package tsp;
 
 public class Node {
