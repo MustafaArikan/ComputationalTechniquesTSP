@@ -8,17 +8,17 @@ public class TourOrganizer {
     private static ArrayList<Node> destinationNodes = new ArrayList<Node>();
 
     // Adds a destination node
-    public static void addCity(Node node) {
+    public static void addNode(Node node) {
         destinationNodes.add(node);
     }
     
     // Get a node
-    public static Node getCity(int index){
+    public static Node getNode(int index){
         return (Node)destinationNodes.get(index);
     }
     
     // Get the number of destination nodes
-    public static int numberOfCities(){
+    public static int numberOfNodes(){
         return destinationNodes.size();
     }
 
