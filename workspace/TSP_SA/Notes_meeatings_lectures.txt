@@ -1,0 +1,37 @@
+## Notes from lecture:
+
+  TSP 
+  Abgabe:
+    -Presentation
+    -Code
+    
+  Allgemeine Fragen:
+  Stop criterion, Xbest 10000 iterations
+
+  Run times berlin52.tsp
+            ch130.tsp
+
+  Ideen zum Verbessern des Algorithmus
+
+  Difference between optimal solution and 
+  
+## Notes from lecture:
+
+  Coooling factor
+
+  Comparing with (select solution only if better)
+
+  Comparing solution and comparing runtime
+
+  Compare with linear
+
+  Presentation:
+    - Introduction to the problem of TSP (Mohammed)
+    - Berlin52 and ch130 data sets (Mohamed)
+    - Simulated Annealing Approach (general idea) (Neil)
+    - Exponential vs linear vs ... (Neil)
+    - Results ( Runtime analysis and show the program, runtime for optimal solution, cooling to distance )
+    - Comparison with different (cooling systems, and probability for acceptance)
+    - Comparison for runtime
+    - Visualization for (optimal versus our solution)
+    - Summary, Conclusion
