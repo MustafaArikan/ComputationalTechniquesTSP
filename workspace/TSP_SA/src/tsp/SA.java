@@ -9,7 +9,7 @@ public class SA {
 	public static void main(String[] args) {
 		int counter = 0;
 		// Simulated Annealing start
-		String pathToFile = "berlin52.tsp"; // path to Berlin file, tsp file containing nodes
+		String pathToFile = "ch130.tsp"; // path to Berlin file, tsp file containing nodes
 
 		final TourOrganizer to = new TourOrganizer();
 		Reader.ReadAndFillOrganizer(pathToFile, to);
@@ -26,6 +26,7 @@ public class SA {
 
         // Initialize intial solution
         Tour currentSolution = new Tour();
+        final Tour solutionforGraphicalOutout = new Tour();
         currentSolution.generateIndividual();
         
         System.out.println("Initial solution distance: " + currentSolution.getDistance());
@@ -78,15 +79,16 @@ public class SA {
         System.out.println("Final solution distance: " + best.getDistance());
         System.out.println("Tour: " + best.toString());
         System.out.println("Number of iterations: " + counter);
-        /**
+        
+        solutionforGraphicalOutout.setTour(currentSolution.getTour());
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Nodes ps = new Nodes(to, currentSolution);
+            	
+                Nodes ps = new Nodes(to, solutionforGraphicalOutout);
                 ps.setVisible(true);
             }
         });
-        **/
 	}
 	
     // Calculate the acceptance probability
