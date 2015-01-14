@@ -25,6 +25,10 @@ public class Tour {
     public ArrayList<Node> getTour(){
         return tour;
     }
+    
+    public void setTour(ArrayList<Node> cloneTour){
+    	this.tour = (ArrayList) cloneTour.clone();
+    }
 
     // Creates a random individual
     public void generateIndividual() {
@@ -83,7 +87,7 @@ public class Tour {
     public String toString() {
         String geneString = "|";
         for (int i = 0; i < tourSize(); i++) {
-            geneString += getNode(i)+"|";
+            geneString += getNode(i).getID()+"|";
         }
         return geneString;
     }
