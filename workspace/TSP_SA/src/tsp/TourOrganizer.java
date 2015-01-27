@@ -8,6 +8,11 @@ package tsp;
 import java.util.ArrayList;
 
 public class TourOrganizer {
+
+	
+    public TourOrganizer(){
+    	destinationNodes.clear();
+    }
 	
     // Holds our nodes
     private static ArrayList<Node> destinationNodes = new ArrayList<Node>();

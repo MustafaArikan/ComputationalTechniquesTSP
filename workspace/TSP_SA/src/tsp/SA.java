@@ -7,9 +7,12 @@ import vis.Nodes;
 public class SA {
 
 	public static void main(String[] args) {
+		
+		for(int i=0; i<1;i++)
+		{
 		int counter = 0;
 		// Simulated Annealing start
-		String pathToFile = "ch130.tsp"; // path to Berlin file, tsp file containing nodes
+		String pathToFile = "berlin52.tsp"; // path to Berlin file, tsp file containing nodes
 
 		final TourOrganizer to = new TourOrganizer();
 		Reader.ReadAndFillOrganizer(pathToFile, to);
@@ -54,8 +57,8 @@ public class SA {
             newSolution.setNode(tourPos1, nodeSwap2);
             
             // Get energy of solutions
-            int currentEnergy = currentSolution.getDistance();
-            int neighbourEnergy = newSolution.getDistance();
+            float currentEnergy = currentSolution.getDistance();
+            float neighbourEnergy = newSolution.getDistance();
 
             // Decide if we should accept the neighbour
             if (acceptanceProbability(currentEnergy, neighbourEnergy, temp) > Math.random()) {
@@ -73,26 +76,30 @@ public class SA {
             // Cool system
             temp = temp * ( 1-coolingRate );
             
-            //temp = initTemp * ( 1 - (counter/N) ); 
+            //temp = initTemp * ( 1 - (counter/N) );
+            //temp = temp - (0.001) ;
         }
 
-        System.out.println("Final solution distance: " + best.getDistance());
-        System.out.println("Tour: " + best.toString());
-        System.out.println("Number of iterations: " + counter);
-        
-        solutionforGraphicalOutout.setTour(currentSolution.getTour());
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-            	
-                Nodes ps = new Nodes(to, solutionforGraphicalOutout);
-                ps.setVisible(true);
-            }
-        });
+			if (best.getDistance() < 7555) {
+				System.out.println("Final solution distance: "+ best.getDistance());
+				System.out.println("Optimal solution distance: " + 7542);
+				System.out.println("Tour: " + best.toString());
+				System.out.println("Number of iterations: " + counter);
+
+				solutionforGraphicalOutout.setTour(currentSolution.getTour());
+				SwingUtilities.invokeLater(new Runnable() {
+					@Override
+					public void run() {
+						Nodes ps = new Nodes(to, solutionforGraphicalOutout);
+						ps.setVisible(true);
+					}
+				});
+			}
+	}
 	}
 	
     // Calculate the acceptance probability
-    public static double acceptanceProbability(int distance, int newDistance, double temperature) {
+    public static double acceptanceProbability(float distance, float newDistance, double temperature) {
         // If the new solution is better, accept it
         if (newDistance < distance) {
             return 1.0;

@@ -12,7 +12,7 @@ public class Tour {
 	
     // Holds our tour of nodes
     private ArrayList<Node> tour = new ArrayList<Node>();
-    private int distance = 0;
+    private float distance = 0;
     
     // Constructs a empty tour
     public Tour(){
@@ -53,9 +53,9 @@ public class Tour {
     }
     
     // Gets the total distance of the tour
-    public int getDistance(){
+    public float getDistance(){
         if (distance == 0) {
-            int tourDistance = 0;
+            float tourDistance = 0;
             // Loop through our tour's nodes
             for (int nodeIndex=0; nodeIndex < tourSize(); nodeIndex++) {
                 // Get node we're traveling from
