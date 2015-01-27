@@ -7,9 +7,7 @@ import vis.Nodes;
 public class SA {
 
 	public static void main(String[] args) {
-		
-		for(int i=0; i<1;i++)
-		{
+
 		int counter = 0;
 		// Simulated Annealing start
 		String pathToFile = "berlin52.tsp"; // path to Berlin file, tsp file containing nodes
@@ -80,9 +78,8 @@ public class SA {
             //temp = temp - (0.001) ;
         }
 
-			if (best.getDistance() < 7555) {
 				System.out.println("Final solution distance: "+ best.getDistance());
-				System.out.println("Optimal solution distance: " + 7542);
+				System.out.println("(Optimal solution for berlin52) distance: " + 7542);
 				System.out.println("Tour: " + best.toString());
 				System.out.println("Number of iterations: " + counter);
 
@@ -94,8 +91,6 @@ public class SA {
 						ps.setVisible(true);
 					}
 				});
-			}
-	}
 	}
 	
     // Calculate the acceptance probability
